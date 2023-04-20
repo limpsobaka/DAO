@@ -9,7 +9,7 @@ import ru.netology.dao.repository.DAORepository;
 import java.util.List;
 
 @RestController
-@RequestMapping("/products/fetch-product")
+@RequestMapping("/")
 public class DAOController {
   private final DAORepository daoRepository;
 
@@ -17,8 +17,8 @@ public class DAOController {
     this.daoRepository = daoRepository;
   }
 
-  @GetMapping()
-  public List<String> getProductByName(@RequestParam("name") String name) {
+  @GetMapping("products/fetch-product")
+  public List getProductByName(@RequestParam("name") String name) {
     return daoRepository.getProductByName(name);
   }
 }
